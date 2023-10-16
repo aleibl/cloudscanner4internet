@@ -1,0 +1,12 @@
+[Unit]
+Description=Run scan at startup after all systemd services are loaded
+After=default.target
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/root/run_scan.py
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
